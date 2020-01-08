@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, make_response
 from flask import request
 from flask import jsonify
 import datetime
@@ -10,6 +10,12 @@ import hit
 startTime = datetime.datetime.now().strftime("%Y-%b-%d %H:%M:%S")
 
 app = Flask(__name__)
+
+
+@app.route("/cesar")
+def retorno_cesar():
+    headers = {"Content-Type": "application/json"}
+    return make_response('Test worked!', 200, headers=headers)
 
 @app.route("/")
 def show_details() :
