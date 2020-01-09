@@ -1,5 +1,5 @@
 from typing import List, Dict
-from flask import Flask
+from flask import Flask, make_response, request, jsonify
 import mysql.connector
 import json
 
@@ -29,5 +29,17 @@ def index() -> str:
     return json.dumps({'favorite_colors': favorite_colors()})
 
 
+@app.route("/wea")
+def retorno_wea():
+    return "Hello World2!"
+
+@app.route("/cesar")
+def retorno_cesar():
+    headers = {"Content-Type": "application/json"}
+    response = make_response('Test worked!', 200)
+    response.headers['Content-Type'] = "application/json"
+    return response
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(debug = True, host='0.0.0.0')
