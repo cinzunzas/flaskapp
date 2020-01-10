@@ -1,7 +1,8 @@
 from typing import List, Dict
 from flask import Flask, make_response, request, jsonify
-import mysql.connector
+import mysql.connector, os
 import json
+from app.libs.crypto import Crypto
 
 app = Flask(__name__)
 
@@ -31,7 +32,7 @@ def index() -> str:
 
 @app.route("/wea")
 def retorno_wea():
-    return "Hello World2!"
+    return os.environ['FLASK_ENV']
 
 @app.route("/cesar")
 def retorno_cesar():

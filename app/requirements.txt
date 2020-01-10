@@ -1,2 +1,7 @@
 Flask
 mysql-connector
+pycrypto
+cryptography
+pprp
+requests
+uwsgi
