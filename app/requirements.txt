@@ -5,3 +5,7 @@ cryptography
 pprp
 requests
 uwsgi
+pprint
+Flask-SQLAlchemy==2.4.1
+mysql-connector-python==8.0.17
+mysqlclient==1.4.4

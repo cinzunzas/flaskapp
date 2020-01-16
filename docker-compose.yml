@@ -18,6 +18,14 @@ services:
       FLASK_ENV: development
       FLASK_DEBUG: 1
       FLASK_APP: app.py
+      PYTHONUNBUFFERED: 1
+      SECURITY_KEY_PATH: "/keys_test/"
+      SECURITY_PRIVATE_KEY: "/keys_test/payments.pem"
+      DB_HOST: "db"
+      DB_USER: "root"
+      DB_USER_PWD: "root"
+      DB_SCHEMA: "knights"
+      DB_PORT: 3306
   db:
     image: mysql:5.7
     network_mode: bridge

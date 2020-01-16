@@ -10,6 +10,10 @@ import os, random, string, chardet, pprp, base64
 
 
 class Crypto:
+    def cesar(self, name, message):
+        print ("Hola Cesar")
+        return "hola " + name + message
+
     def encrypt(self, data, key, typeKey="public"):
         if key is None:
             # loggear

@@ -27,13 +27,13 @@ class SitesManager():
     # Retorna arreglo de keys [public, private]
     def getKeys(self, siteId):
         public_key_filename = self.getPublicKey(siteId)
-        public_key_path = os.path.join(settings.SECURITY_KEY_PATH, public_key_filename)
+        public_key_path = os.path.join(os.environ['SECURITY_KEY_PATH'], public_key_filename)
         if not os.path.isfile(public_key_path): return [None, None]
 
         with open(public_key_path, 'rb') as myfile:
             public_key = myfile.read()
 
-        private_key_path = settings.SECURITY_PRIVATE_KEY
+        private_key_path = os.environ['SECURITY_PRIVATE_KEY']
         if not os.path.isfile(private_key_path): return [None, None]
 
         with open(private_key_path, 'rb') as myfile:
